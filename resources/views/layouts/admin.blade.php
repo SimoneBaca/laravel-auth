@@ -64,13 +64,13 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="#">
-                                    <i class="fa-solid fa-bookmark"></i>
-                                    Categories
+                            <a class="nav-link " href="{{route('admin.categories.index')}}">
+                            <i class="fa-solid fa-bookmark"></i>
+                                    {{__('Categories')}}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="#">
+                            <a class="nav-link " href="#">
                                     <i class="fa-solid fa-tags"></i>
                                     Tags
                                 </a>

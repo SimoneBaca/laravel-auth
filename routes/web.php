@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\ProfileController;
@@ -27,6 +28,9 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard'); // admin.dashboard
     Route::resource('posts', PostController::class)->parameters([
         'posts' => 'post:slug'
+    ]);
+    Route::resource('categories', CategoryController::class)->parameters([
+        'categories' => 'category:slug'
     ]);
 });
 
