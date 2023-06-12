@@ -21,7 +21,15 @@
         <input type="text" class="form-control @error('cover_image') is-invalid @enderror" name="cover_image" id="cover_image" aria-describedby="cover_imageHelper" placeholder="Learn php">
         <small id="cover_imageHelper" class="form-text text-muted">Type the post cover_image max 150 characters - must be unique</small>
     </div>
-
+    <div class="mb-3">
+        <label for="category_id" class="form-label">Categories</label>
+        <select class="form-select @error('category_id') is-invalid @enderror" name="category_id" id="category_id">
+            <option value="">Select a category</option>
+            @foreach ($categories as $category)
+            <option value="{{$category->id}}" {{ $category->id  == old('category_id', '') ? 'selected' : '' }}>{{$category->name}}</option>
+            @endforeach
+        </select>
+    </div>
     <div class="mb-3">
         <label for="content" class="form-label">Content</label>
         <textarea class="form-control @error('content') is-invalid @enderror" name="content" id="content" rows="3"></textarea>
